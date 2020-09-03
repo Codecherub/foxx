@@ -11,8 +11,8 @@
     
     <div  class="container">
 
-
-        <div class="foxx toast place_top_center  success">
+        <div style="margin-top: 180px; background: #f5f5f5; float:right; right:40px; position: relative; width: 300px; height:150px; padding:20px;" id="map"></div>
+        <!-- <div class="foxx toast place_top_center  success">
             <div>
                 <i class="foxx-icon-type  foxx-icon-check"></i>
             </div>
@@ -23,7 +23,7 @@
             <div>
                 <i class="foxx_exit foxx-icon-exit"></i>
             </div>
-        </div>
+        </div> -->
        
         <!-- <div class="foxx toast success">
             <div>
@@ -116,7 +116,72 @@
         </div> -->
 
     </div>
-
+   
     <script src="foxx.js"></script>
+    <script>
+    //     const set = ({
+    //            position:'place_top_right',
+    //            timeOut:fx.get.infinity(),
+    //            animateIn:'fx_animate_fadeInBottom',
+    //            animateOut:'fx_animate_fadeOutBottom',
+    //            delay:2000,
+    //            placeAfter:false,
+    //            css:'dark'
+    //        })
+
+    //    fx.start({
+    //        app:'toast',
+    //        opt:set
+    //    })
+    //     fx.toast.info({
+    //         title:'toast with title',
+    //         body:'lets see how it goes'+
+    //             'with an addon button <btn onclick="">action btn</btn>',
+    //             opt:set
+    //     });
+    //     const options = ({
+    //            position:'place_top_right',
+    //            css:'light',
+    //            timeOut:3000,
+    //            placeAfter:'map',
+    //            animateIn:'fx_animate_slideInRight',
+    //            animateOut:'fx_animate_slideOutRight',
+    //            delay:0
+    //        })
+    //     fx.start({
+    //        app:'toast',
+    //        opt:options
+    //    })
+    //     fx.toast.info({
+    //         title:'',
+    //         body:'here\'s a toast without a title',
+    //         opt:options
+    //     });
+
+        // foxx =  new fx({
+            opts = ({
+               position:'place_top_center',
+               css:'light',
+               timeOut:12000,
+            //    placeAfter:false,
+               animateIn:'fx_animate_slideInRight',
+               animateOut:'fx_animate_slideOutRight',
+               delay:000,
+               dismiss:false
+            })
+        // })
+
+       
+      fx.toast.success({
+          title:'Notification head',
+          body:'Howdy, this is a sample notification simple & reusable, Check out the cool button below<btn >click me</bnt>',
+          opt:opts
+      })    
+   
+
+    
+        
+     
+    </script>
 </body>
 </html>

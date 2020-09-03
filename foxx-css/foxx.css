@@ -29,33 +29,33 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  .foxx-icon-block:before {
+  .fx-icon-block:before {
     content: "\e900";
   }
-  .foxx-icon-check:before {
+  .fx-icon-check:before {
     content: "\e901";
   }
-  .foxx-icon-exit:before {
+  .fx-icon-exit:before {
     content: "\e902";
   }
-  .foxx-icon-close:before {
+  .fx-icon-close:before {
     content: "\e903";
   }
-  .foxx-icon-info:before {
+  .fx-icon-info:before {
     content: "\e904";
   }
-  .foxx-icon-layers:before {
+  .fx-icon-layers:before {
     content: "\e905";
   }
   
 
-/* define styls for foxx toast alerts  */
+/* define styls for fx toast alerts  */
 
-.foxx {
+.fx {
     font-family: 'Nunito', sans-serif;
 }
 
-.foxx.toast{
+.fx.toast{
     width: 300px;
     background:#fdfdfe;
     border-radius: 8px;
@@ -68,74 +68,81 @@
     position: fixed;
     z-index: 10000000000;
 }
-.foxx.toast .content{
+
+.fx.toast.fix_relative{
+    position: relative;
+    margin:0 !important;
+    width: auto !important;
+    top:auto !important;
+}
+.fx.toast .content{
     padding:0 15px;
     display: grid;
     width: 100%;
 }
-.foxx.toast .foxx_msg {
+.fx.toast .fx_msg {
     font-size:.85em;
     font-weight: 600;
     color: #6b6b6b;
 }
 
-.foxx.toast .foxx_title{
+.fx.toast .fx_title{
     display: block;
     font-size:1em;
     font-weight: 700;
     color:#38393b;
 }
 
-.foxx.toast .foxx-icon-type{
+.fx.toast .fx-icon-type{
     border-radius: 50%;
     padding: 5px;
 }
 
-.foxx.toast.success .foxx-icon-type{
+.fx.toast.success .fx-icon-type{
     background:rgb(227, 255, 184);
     color:rgb(32, 160, 32)
 }
-.foxx.toast.info .foxx-icon-type{
+.fx.toast.info .fx-icon-type{
     background:#d8f1fa;
     color:#30B2ED
 }
-.foxx.toast.warning .foxx-icon-type{
-    background:#fff7d1;
-    color:#b88700
+.fx.toast.warning .fx-icon-type{
+    background:#ffee9a;
+    color:#b98800
 }
-.foxx.toast.error .foxx-icon-type{
+.fx.toast.error .fx-icon-type{
     background:#fddbde;
     color:#ff0000
 }
 
 /* dark mode styling  */
 
-.foxx.toast.dark {
+.fx.toast.dark {
     background:#102A43
 }
 
-.foxx.toast.dark .foxx_msg{
+.fx.toast.dark .fx_msg{
     color:rgb(212, 212, 212);
 } 
-.foxx.toast.dark .foxx_title{
+.fx.toast.dark .fx_title{
     color:rgb(233, 233, 233);
 }
 
-.foxx.toast .foxx_exit{
+.fx.toast .fx_exit{
     color:rgb(107, 107, 107);
     cursor: pointer;
     opacity: .8;
 }
 
-.foxx.toast .foxx_exit:hover{
+.fx.toast .fx_exit:hover{
     opacity: 1;
 }
-.foxx.toast.dark .foxx_exit{
+.fx.toast.dark .fx_exit{
     color:rgb(214, 214, 214)
 }
 
 /* button styling  */
-.foxx.toast btn{
+.fx.toast btn{
     display: block;
     margin:10px 0 0 0 ;
     border-radius: 5px;
@@ -145,60 +152,65 @@
     cursor: pointer;
 }
 
-.foxx.toast btn:hover{
+.fx.toast btn:hover{
     box-shadow: 2px 2px 4px 2px #e0e0e04f;
 }
 
-.foxx.toast.success btn{
+.fx.toast.success btn{
     background:rgb(227, 255, 184);
     color:rgb(32, 160, 32)
 }
-.foxx.toast.info btn{
+.fx.toast.info btn{
     background:#d8f1fa;
     color:#30B2ED
 }
-.foxx.toast.warning btn{
-    background:#fff7d1;
+.fx.toast.warning btn{
+    background:#ffee9a;
     color:#b88700
 }
-.foxx.toast.error btn{
+.fx.toast.error btn{
     background:#fddbde;
     color:#ff0000
 }
 
 /* toast positioning  */
-.foxx.toast.place_top_center{
+.fx.toast.place_top_center{
     margin: 40px auto;
+    top:0;
     left: 0;
     right: 0;
 }
 
-.foxx.toast.place_bottom_center{
+.fx.toast.place_bottom_center{
     margin: 40px auto;
     left: 0;
     right: 0;
     bottom:0
 }
-.foxx.toast.place_top_left{
+.fx.toast.place_top_left{
     margin: 40px;
+    top:0;
+    left:0
 }
 
-.foxx.toast.place_bottom_left{
+.fx.toast.place_bottom_left{
     margin: 40px;
-    bottom:0
+    bottom:0;
+    left:0
 }
-.foxx.toast.place_top_right{
+.fx.toast.place_top_right{
+    top:0;
     margin: 40px;
     right:0
 }
 
-.foxx.toast.place_bottom_right{
+.fx.toast.place_bottom_right{
     margin: 40px;
     right: 0;
     bottom:0
 }
 
-.foxx.toast.place_center{
+.fx.toast.place_center{
 top: calc(50% - 100px);
 margin: auto;
 left: 0;
@@ -208,7 +220,140 @@ right: 0;
 
 /* responsive for mobile devices  */
 @media(max-width:750px){
-    .foxx.toast{
-      
+    .fx.toast{
+      margin:20px auto !important;
+      left: 0;
+      right: 0;
+    }
+    .fx.toast.fx.toast.fix_relative {
+      width: auto;
     }
 }
+
+@-webkit-keyframes fade-in-bottom {
+    0% {
+      -webkit-transform: translateY(50px);
+              transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-bottom {
+    0% {
+      -webkit-transform: translateY(50px);
+              transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fade-out-bottom {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(50px);
+              transform: translateY(50px);
+      opacity: 0;
+    }
+  }
+  @keyframes fade-out-bottom {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(50px);
+              transform: translateY(50px);
+      opacity: 0;
+    }
+  }
+  
+  
+@-webkit-keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(1000px);
+              transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(1000px);
+              transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes slide-out-right {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateX(1000px);
+              transform: translateX(1000px);
+      opacity: 0;
+    }
+  }
+  @keyframes slide-out-right {
+    0% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateX(1000px);
+              transform: translateX(1000px);
+      opacity: 0;
+    }
+  }
+  
+  
+
+  .fx_animate_swing {
+	-webkit-animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-top-fwd 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+.fx_animate_slideInRight {
+	-webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.fx_animate_slideOutRight {
+	-webkit-animation: slide-out-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	        animation: slide-out-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+.fx_animate_fadeInBottom {
+	-webkit-animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-bottom 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+.fx_animate_fadeOutBottom {
+    -webkit-animation: fade-out-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: fade-out-bottom 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
