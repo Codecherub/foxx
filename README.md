@@ -32,15 +32,12 @@ Available Components:
 
 # Usage
 
-  - define component preferences
+  - define  preferences
     ```sh
     settings = ({
                position:'place_top_center',
                css:'light',
                timeOut:12000,
-               placeAfter:'map',
-               animateIn:'fx_animate_slideInRight',
-               animateOut:'fx_animate_slideOutRight',
                delay:000,
                dismiss:false
     })
@@ -52,11 +49,11 @@ Available Components:
           title:'Notification head',
           body:'Howdy, this is a sample notification simple & reusable,
           Check out the cool button <btn >click me</bt>',
-          opt:opts
+          opt:settings         //use preference instance
       })   
     ```
   - voila
-    ![sample image](https://github.com/Codecherub/foxx/cog/easy.png)
+    ![sample image](https://github.com/Codecherub/foxx/blob/master/cog/easy.PNG)
 
 That's pretty much all you need to know.
 
