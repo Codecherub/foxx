@@ -48,7 +48,7 @@ Available Components:
      fx.toast.success({
           title:'Notification head',
           body:'Howdy, this is a sample notification simple & reusable,
-          Check out the cool button <btn >click me</bt>',
+          Check out the cool button below<btn >click me</bt>',
           opt:settings         //use preference instance
       })   
     ```
